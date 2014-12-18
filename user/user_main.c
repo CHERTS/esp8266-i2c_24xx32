@@ -4,7 +4,7 @@
  * 
  *  For a single device, connect as follows:
  *  EEPROM 4 (GND) to GND
- *  EEPROM 8 (Vcc) to Vcc (5 Volts)
+ *  EEPROM 8 (Vcc) to Vcc (3.3 Volts)
  *  EEPROM 5 (SDA) to ESP Pin GPIO2
  *  EEPROM 6 (SCL) to ESP Pin GPIO0 (see i2c.h)
  *  EEPROM 7 (WP)  to GND

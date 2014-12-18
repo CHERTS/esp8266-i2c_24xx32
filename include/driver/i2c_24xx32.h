@@ -1,7 +1,7 @@
 /*
     Driver for the 24xx32 series serial EEPROM from ATMEL
     Official repository: https://github.com/CHERTS/esp8266-i2c_24xx32
-    Base on https://github.com/husio-org/AT24C512C
+    Base on https://github.com/husio-org/AT24C512C and https://code.google.com/p/arduino-at24c1024/
     This driver depends on the I2C driver https://github.com/zarya/esp8266_i2c_driver/
 
     Copyright (C) 2014 Mikhail Grigorev (CHERTS)
