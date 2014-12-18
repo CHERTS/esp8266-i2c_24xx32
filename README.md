@@ -29,13 +29,13 @@ make flash
 --
 
 <b>For a single device, connect as follows ATMEL AT24C512 to ESP-01:</b><br>
-EEPROM 4 (GND) to GND ESP-01<br>
-EEPROM 8 (Vcc) to Vcc (3.3 Volts) ESP-01<br>
-EEPROM 5 (SDA) to GPIO2 ESP-01<br>
-EEPROM 6 (SCL) to GPIO0 ESP-01 (see i2c.h)<br>
-EEPROM 7 (WP)  to GND ESP-01<br>
-EEPROM 1 (A0)  to GND ESP-01<br>
-EEPROM 2 (A1)  to GND ESP-01<br><br>
+Вывод EEPROM 4 (GND) подключен к GND ESP-01<br>
+Вывод EEPROM 8 (Vcc) подключен к Vcc (3.3 Volts) ESP-01<br>
+Вывод EEPROM 5 (SDA) подключен к GPIO2 ESP-01<br>
+Вывод EEPROM 6 (SCL) подключен к GPIO0 ESP-01 (see i2c.h)<br>
+Вывод EEPROM 7 (WP)  подключен к GND ESP-01<br>
+Вывод EEPROM 1 (A0)  подключен к GND ESP-01<br>
+Вывод EEPROM 2 (A1)  подключен к GND ESP-01<br><br>
 
 <b>Building on Windows:</b><br>
 1. <a href="http://programs74.ru/get.php?file=EspressifESP8266DevKitX86">Download</a> and install compiler and SDK.<br>
