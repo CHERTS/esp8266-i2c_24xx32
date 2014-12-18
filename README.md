@@ -1,23 +1,23 @@
 ESP8266 - Driver for the 24xx32, 24xx64, 24xx128, 24xx256 and 24xx512 series serial EEPROM from ATMEL
 =====================================================================================================
 
-<b>Схема подключения ATMEL AT24C512 к ESP-01:</b><br>
+<b>РЎС…РµРјР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ ATMEL AT24C512 Рє ESP-01:</b><br>
 EEPROM 4 (GND) to GND ESP-01<br>
-EEPROM 8 (Vcc) to Vcc (3.3 Вольта) ESP-01<br>
+EEPROM 8 (Vcc) to Vcc (3.3 Р’РѕР»СЊС‚Р°) ESP-01<br>
 EEPROM 5 (SDA) to GPIO2 ESP-01<br>
-EEPROM 6 (SCL) to GPIO0 ESP-01 (смотрите файл i2c.h)<br>
+EEPROM 6 (SCL) to GPIO0 ESP-01 (СЃРјРѕС‚СЂРёС‚Рµ С„Р°Р№Р» i2c.h)<br>
 EEPROM 7 (WP)  to GND ESP-01<br>
 EEPROM 1 (A0)  to GND ESP-01<br>
 EEPROM 2 (A1)  to GND ESP-01<br><br>
 
-<b>Сборка под Windows:</b><br>
-1. <a href="http://programs74.ru/get.php?file=EspressifESP8266DevKitX86">Скачайте</a> и установите компилятор и SDK.<br>
-2. <a href="http://sourceforge.net/projects/mingw/files/Installer/">Скачайте</a> и установите MinGW. Запускаем mingw-get-setup.exe, в процессе установки выберите режим без GUI, то есть уберите галочку "...also install support for the graphical user interface".<br>
-3. <a href="http://programs74.ru/get.php?file=EspressifESP8266DevKitAddon">Скачайте</a> (84Mb) набор моих скриптов для автоматизации установки дополнительных модулей для MinGW.<br>
-4. Запустите из моего набора файл install-mingw-package.bat. Он установит основные модули для MinGW, установка должна пройти без ошибок.<br>
-5. Установите <a href="http://git-scm.com/download/win">Git for Windows</a> (после установки потребуется перезагрузить компьютер).<br>
-6. Запускаем консоль C:\MinGW\msys\1.0\msys.bat<br>
-7. В консоле выполните:<br>
+<b>РЎР±РѕСЂРєР° РїРѕРґ Windows:</b><br>
+1. <a href="http://programs74.ru/get.php?file=EspressifESP8266DevKitX86">РЎРєР°С‡Р°Р№С‚Рµ</a> Рё СѓСЃС‚Р°РЅРѕРІРёС‚Рµ РєРѕРјРїРёР»СЏС‚РѕСЂ Рё SDK.<br>
+2. <a href="http://sourceforge.net/projects/mingw/files/Installer/">РЎРєР°С‡Р°Р№С‚Рµ</a> Рё СѓСЃС‚Р°РЅРѕРІРёС‚Рµ MinGW. Р—Р°РїСѓСЃРєР°РµРј mingw-get-setup.exe, РІ РїСЂРѕС†РµСЃСЃРµ СѓСЃС‚Р°РЅРѕРІРєРё РІС‹Р±РµСЂРёС‚Рµ СЂРµР¶РёРј Р±РµР· GUI, С‚Рѕ РµСЃС‚СЊ СѓР±РµСЂРёС‚Рµ РіР°Р»РѕС‡РєСѓ "...also install support for the graphical user interface".<br>
+3. <a href="http://programs74.ru/get.php?file=EspressifESP8266DevKitAddon">РЎРєР°С‡Р°Р№С‚Рµ</a> (84Mb) РЅР°Р±РѕСЂ РјРѕРёС… СЃРєСЂРёРїС‚РѕРІ РґР»СЏ Р°РІС‚РѕРјР°С‚РёР·Р°С†РёРё СѓСЃС‚Р°РЅРѕРІРєРё РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹С… РјРѕРґСѓР»РµР№ РґР»СЏ MinGW.<br>
+4. Р—Р°РїСѓСЃС‚РёС‚Рµ РёР· РјРѕРµРіРѕ РЅР°Р±РѕСЂР° С„Р°Р№Р» install-mingw-package.bat. РћРЅ СѓСЃС‚Р°РЅРѕРІРёС‚ РѕСЃРЅРѕРІРЅС‹Рµ РјРѕРґСѓР»Рё РґР»СЏ MinGW, СѓСЃС‚Р°РЅРѕРІРєР° РґРѕР»Р¶РЅР° РїСЂРѕР№С‚Рё Р±РµР· РѕС€РёР±РѕРє.<br>
+5. РЈСЃС‚Р°РЅРѕРІРёС‚Рµ <a href="http://git-scm.com/download/win">Git for Windows</a> (РїРѕСЃР»Рµ СѓСЃС‚Р°РЅРѕРІРєРё РїРѕС‚СЂРµР±СѓРµС‚СЃСЏ РїРµСЂРµР·Р°РіСЂСѓР·РёС‚СЊ РєРѕРјРїСЊСЋС‚РµСЂ).<br>
+6. Р—Р°РїСѓСЃРєР°РµРј РєРѕРЅСЃРѕР»СЊ C:\MinGW\msys\1.0\msys.bat<br>
+7. Р’ РєРѕРЅСЃРѕР»Рµ РІС‹РїРѕР»РЅРёС‚Рµ:<br>
 ```
 cd /c/Espressif/examples
 git clone https://github.com/CHERTS/esp8266-i2c_24xx32
