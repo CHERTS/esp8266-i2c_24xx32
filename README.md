@@ -2,13 +2,13 @@ ESP8266 - Driver for the 24xx32, 24xx64, 24xx128, 24xx256 and 24xx512 series ser
 =====================================================================================================
 
 <b>Схема подключения ATMEL AT24C512 к ESP-01:</b><br>
-EEPROM 4 (GND) to GND ESP-01<br>
-EEPROM 8 (Vcc) to Vcc (3.3 Вольта) ESP-01<br>
-EEPROM 5 (SDA) to GPIO2 ESP-01<br>
-EEPROM 6 (SCL) to GPIO0 ESP-01 (смотрите файл i2c.h)<br>
-EEPROM 7 (WP)  to GND ESP-01<br>
-EEPROM 1 (A0)  to GND ESP-01<br>
-EEPROM 2 (A1)  to GND ESP-01<br><br>
+Вывод EEPROM 4 (GND) подключен к GND ESP-01<br>
+Вывод EEPROM 8 (Vcc) подключен к Vcc (3.3 Вольта) ESP-01<br>
+Вывод EEPROM 5 (SDA) подключен к GPIO2 ESP-01<br>
+Вывод EEPROM 6 (SCL) подключен к GPIO0 ESP-01 (смотрите файл i2c.h)<br>
+Вывод EEPROM 7 (WP)  подключен к GND ESP-01<br>
+Вывод EEPROM 1 (A0)  подключен к GND ESP-01<br>
+Вывод EEPROM 2 (A1)  подключен к GND ESP-01<br>
 
 <b>Сборка под Windows:</b><br>
 1. <a href="http://programs74.ru/get.php?file=EspressifESP8266DevKitX86">Скачайте</a> и установите компилятор и SDK.<br>
@@ -29,13 +29,13 @@ make flash
 --
 
 <b>For a single device, connect as follows ATMEL AT24C512 to ESP-01:</b><br>
-Вывод EEPROM 4 (GND) подключен к GND ESP-01<br>
-Вывод EEPROM 8 (Vcc) подключен к Vcc (3.3 Volts) ESP-01<br>
-Вывод EEPROM 5 (SDA) подключен к GPIO2 ESP-01<br>
-Вывод EEPROM 6 (SCL) подключен к GPIO0 ESP-01 (see i2c.h)<br>
-Вывод EEPROM 7 (WP)  подключен к GND ESP-01<br>
-Вывод EEPROM 1 (A0)  подключен к GND ESP-01<br>
-Вывод EEPROM 2 (A1)  подключен к GND ESP-01<br><br>
+EEPROM 4 (GND) to GND ESP-01<br>
+EEPROM 8 (Vcc) to Vcc (3.3 Volts) ESP-01<br>
+EEPROM 5 (SDA) to GPIO2 ESP-01<br>
+EEPROM 6 (SCL) to GPIO0 ESP-01 (see file i2c.h)<br>
+EEPROM 7 (WP)  to GND ESP-01<br>
+EEPROM 1 (A0)  to GND ESP-01<br>
+EEPROM 2 (A1)  to GND ESP-01<br>
 
 <b>Building on Windows:</b><br>
 1. <a href="http://programs74.ru/get.php?file=EspressifESP8266DevKitX86">Download</a> and install compiler and SDK.<br>
