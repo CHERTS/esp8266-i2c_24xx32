@@ -30,8 +30,8 @@
 #define WORD_MASK 0xFFFF
 
 uint8 eeprom_readByte(uint8 address, uint32_t location);
-char *eeprom_readPage(uint8 address, uint8 location, uint8 len);
+char *eeprom_readPage(uint8 address, uint32_t location, uint32_t len);
 uint8 eeprom_writeByte(uint8 address, uint32_t location, uint8 data);
-uint8 eeprom_writePage(uint8 address, uint8 location, char data[], uint8 len);
+uint8 eeprom_writePage(uint8 address, uint32_t location, char data[], uint32_t len);
 
 #endif

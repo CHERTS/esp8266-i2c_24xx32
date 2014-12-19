@@ -31,8 +31,8 @@
 
 /**
  * Read a single byte from the EEPROM
- * uint8 address    : The i2c address
- * uint8 location   : The memory location to read
+ * uint8 address        : The i2c address
+ * uint32_t  location   : The memory location to read
  */
 uint8 ICACHE_FLASH_ATTR
 eeprom_readByte(uint8 address, uint32_t location)
@@ -71,26 +71,25 @@ eeprom_readByte(uint8 address, uint32_t location)
         return 0;
     }
     data = i2c_readByte();
+    i2c_send_ack(0); // NOACK
     i2c_stop();
     return data;
 }
 
 /**
  * Read multiple bytes from the EEPROM
- * uint8 address    : The i2c address
- * uint8 location   : The memory location to read
- * uint8 len        : Number of bytes to read
+ * uint8 address       : The i2c address
+ * uint32_t location   : The memory location to read
+ * uint32_t len        : Number of bytes to read
  */
 char ICACHE_FLASH_ATTR
-*eeprom_readPage(uint8 address, uint8 location, uint8 len)
+*eeprom_readPage(uint8 address, uint32_t location, uint32_t len)
 {
     static char data[256];
+    uint8 write_address;
 
     i2c_start();
-    uint8 write_address;
-    write_address = address << 1;
-    write_address |= 1;
-    i2c_writeByte(write_address);
+    i2c_writeByte(address << 1);
     if (!i2c_check_ack())
     {
         i2c_stop();
@@ -111,29 +110,32 @@ char ICACHE_FLASH_ATTR
     }
 
     i2c_start();
-    i2c_writeByte(address << 1);     
+    write_address = address << 1;
+    write_address |= 1;
+    i2c_writeByte(write_address);
     if (!i2c_check_ack())
     {
         i2c_stop();
         return 0;
     }
 
-    uint8 i;
+    uint32_t i;
     for (i = 0; i < len; i++)
     {
         data[i] = i2c_readByte();
-        i2c_send_ack(1);
+        if(i != len-1)
+        	i2c_send_ack(1); //ACK
     }
-
+    i2c_send_ack(0); // NOACK
     i2c_stop();
     return data;
 }
 
 /**
  * Write a byte to the I2C EEPROM
- * uint8 address    : I2C Device address
- * uint8 location   : Memory location
- * uint8 data       : Data to write to the EEPROM
+ * uint8 address       : I2C Device address
+ * uint32_t location   : Memory location
+ * uint8 data          : Data to write to the EEPROM
  */
 uint8 ICACHE_FLASH_ATTR
 eeprom_writeByte(uint8 address, uint32_t location, uint8 data)
@@ -173,14 +175,14 @@ eeprom_writeByte(uint8 address, uint32_t location, uint8 data)
 }
 
 /**
- * Read a number of pages from the EEPROM
- * uint8 address    : Address of the module
- * uint8 location   : Start on this memory address
- * char data        : The data to be writen to the EEPROM
- * uint8 len        : The lenght of the data
+ * Write a number of pages to the EEPROM
+ * uint8 address       : Address of the module
+ * uint32_t location   : Start on this memory address
+ * char data           : The data to be writen to the EEPROM
+ * uint32_t len        : The lenght of the data
  */
 uint8 ICACHE_FLASH_ATTR
-eeprom_writePage(uint8 address, uint8 location, char data[], uint8 len)
+eeprom_writePage(uint8 address, uint32_t location, char data[], uint32_t len)
 {
     i2c_start();
     i2c_writeByte(address << 1);     
@@ -203,7 +205,7 @@ eeprom_writePage(uint8 address, uint8 location, char data[], uint8 len)
         return 0;
     }
 
-    uint8 i;
+    uint32_t i;
     for (i = 0; i < len; i++)
     {
         i2c_writeByte(data[i]);
