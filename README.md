@@ -1,5 +1,5 @@
-ESP8266 - Driver for the 24xx32, 24xx64, 24xx128, 24xx256 and 24xx512 series serial EEPROM from ATMEL
-=====================================================================================================
+ESP8266 - Driver for the 24xx32 ... 24xx512 series serial EEPROM from ATMEL and Microchip
+=========================================================================================
 
 <b>Схема подключения ATMEL AT24C512 к ESP-01:</b><br>
 Вывод EEPROM 4 (GND) подключен к GND ESP-01<br>
